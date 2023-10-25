@@ -1,8 +1,8 @@
 import './App.css';
-import Players from './Players.js';
-import ScheduleByPlayers from './ScheduleByPlayers.js'
-import ScheduleByRounds from './ScheduleByRounds.js'
-import OpponentsMatrix from './OpponentsMatrix'
+import Players from './components/Players.js';
+import ScheduleByPlayers from './components/ScheduleByPlayers.js'
+import ScheduleByRounds from './components/ScheduleByRounds.js'
+import OpponentsMatrix from './components/OpponentsMatrix'
 
 export default function App() {
   function handleTabChange(name) { 
