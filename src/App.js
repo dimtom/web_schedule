@@ -1,70 +1,39 @@
 import './App.css';
+
 import Players from './components/Players.js';
 import ScheduleByPlayers from './components/ScheduleByPlayers.js'
 import ScheduleByRounds from './components/ScheduleByRounds.js'
 import OpponentsMatrix from './components/OpponentsMatrix'
 
+// Navigation and links
+import { BrowserRouter} from 'react-router-dom'
+import { Link, Route, Routes } from 'react-router-dom'
+
 export default function App() {
-  function handleTabChange(name) { 
-    let tabName = "Tab" + name
-    
-
-    // hide all tabs except current one
-    var tabs = document.getElementsByClassName("tabcontent");
-    for (let tab of tabs) {
-      tab.style.display = (tab.id === tabName) ? "block" : "none";
-    }
-  
-    // deactivate all buttons except current one
-    /*
-    let buttonName = "Button" + name
-    let buttons = document.getElementsByClassName("tablink");
-    for (let button of buttons) {
-      if (button.id === buttonName)
-        button.className = button.className.replace(" active", "")
-      else
-        button.className += " active";
-    }*/
-  }
-
   const players_json = require("./data/players.json");
   const people = players_json.people;
   const schedule_json = require("./data/schedule.json")
   return (
-    <div className="App">
-      <h1>Mafia schedule portal</h1>
-      <div className="tab">
-        <button className="tablink" id="ButtonLoad"  onClick={()=>handleTabChange("Load")}>Load </button>
-        <button className="tablink" id="ButtonPlayers"  onClick={()=>handleTabChange("Players")}>Players</button>
-        <button className="tablink" id="ButtonSchedulePlayers"  onClick={()=>handleTabChange("SchedulePlayers")}>Schedule - Players</button>
-        <button className="tablink" id="ButtonScheduleRounds"  onClick={()=>handleTabChange("ScheduleRounds")}>Schedule - Rounds</button>
-        <button className="tablink" id="ButtonOpponentsMatrix" onClick={()=>handleTabChange("OpponentsMatrix")}>Opponents matrix</button>
-      </div>
+    <BrowserRouter baseName="/">
+      <div className="App">
+        <h1>Mafia schedule portal</h1>
+        <nav className="tab">
+          <Link className="tablink" to="/load">Load </Link>
+          <Link className="tablink" to="/players">Players</Link>
+          <Link className="tablink" to="/schedule_players">Schedule - Players</Link>
+          <Link className="tablink" to="/schedule_rounds">Schedule - Rounds</Link>
+          <Link className="tablink" to="/stats_pair_matrix">Pairs matrix</Link>
+        </nav>
 
-      <div id="TabLoad" className="tabcontent">
-        <h2>TODO: load schedule JSON</h2>
+        <Routes>
+          <Route path="/load" element={<h2>TODO: load schedule JSON</h2>} />
+          <Route path="/players" element={<Players players={people} />} />
+          <Route path="/schedule_players" element={<ScheduleByPlayers schedule={schedule_json} players={people} />} />
+          <Route path="/schedule_rounds" element={<ScheduleByRounds schedule={schedule_json} players={people} />} />
+          <Route path="/stats_pair_matrix" element={<OpponentsMatrix schedule={schedule_json} players={people} />} />
+        </Routes>
       </div>
-
-      <div id="TabPlayers" className="tabcontent">
-        <h2>List of players</h2>
-        <Players players={people} />
-      </div>
-
-      <div id="TabSchedulePlayers" className="tabcontent">
-        <h2>Schedule by Players</h2>
-        <ScheduleByPlayers schedule={schedule_json} players={people} />
-      </div>
-
-      <div id="TabScheduleRounds" className="tabcontent">
-        <h2>Scheule by Rounds</h2>
-        <ScheduleByRounds schedule={schedule_json} players={people} />
-      </div>
-
-      <div id="TabOpponentsMatrix" className="tabcontent">
-        <h2>Opponents matrix</h2>
-        <OpponentsMatrix schedule={schedule_json} players={people} />
-      </div>
-    </div>
+    </BrowserRouter>
   );
 };
 
