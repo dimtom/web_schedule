@@ -1,0 +1,108 @@
+{
+    "people": [
+      {
+        "id": 0,
+        "name": "Alegria"
+      },
+      {
+        "id": 1,
+        "name": "babadysia"
+      },
+      {
+        "id": 2,
+        "name": "Djuffin"
+      },
+      {
+        "id": 3,
+        "name": "Козаче"
+      },
+      {
+        "id": 4,
+        "name": "Fantomas"
+      },
+      {
+        "id": 5,
+        "name": "Lemur"
+      },
+      {
+        "id": 6,
+        "name": "Like"
+      },
+      {
+        "id": 7,
+        "name": "Lomaster"
+      },
+      {
+        "id": 8,
+        "name": "Lynx"
+      },
+      {
+        "id": 9,
+        "name": "Смородина"
+      },
+      {
+        "id": 10,
+        "name": "Metamorphosis"
+      },
+      {
+        "id": 11,
+        "name": "Шальная Императрица"
+      },
+      {
+        "id": 12,
+        "name": "nolik"
+      },
+      {
+        "id": 13,
+        "name": "Siberian"
+      },
+      {
+        "id": 14,
+        "name": "Solaris"
+      },
+      {
+        "id": 15,
+        "name": "VanGogh"
+      },
+      {
+        "id": 16,
+        "name": "Virus"
+      },
+      {
+        "id": 17,
+        "name": "Vlady"
+      },
+      {
+        "id": 18,
+        "name": "Бублик"
+      },
+      {
+        "id": 19,
+        "name": "Зефир"
+      },
+      {
+        "id": 20,
+        "name": "Eva"
+      },
+      {
+        "id": 21,
+        "name": "Марианна"
+      },
+      {
+        "id": 22,
+        "name": "Maverick"
+      },
+      {
+        "id": 23,
+        "name": "Mishel"
+      },
+      {
+        "id": 24,
+        "name": "Шнурок"
+      },
+      {
+        "id": 25,
+        "name": "Ювелир"
+      }
+    ]
+  }
